@@ -1,0 +1,289 @@
+/* --- Загальні стилі --- */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #f9f7f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #5a3a3a;
+}
+
+a {
+  color: #a7727d;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Хедер (Шапка сайту) --- */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  margin-right: 15px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.user-actions .btn {
+  margin-left: 10px;
+}
+
+/* --- Кнопки --- */
+.btn, .nav-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #a7727d;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #a7727d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn:hover, .nav-button:hover {
+  background-color: #a7727d;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #a7727d;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #8c5d66;
+  border-color: #8c5d66;
+}
+
+/* --- Основний контент --- */
+main.container {
+  display: flex;
+  gap: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.main-content {
+  flex: 3;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  height: fit-content;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.highlight {
+  background-color: #fde8eb;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #8c5d66;
+}
+
+/* --- Таблиця --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+table caption {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #5a3a3a;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+thead {
+  background-color: #a7727d;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tbody tr:hover {
+  background-color: #fde8eb;
+}
+
+tfoot {
+  font-style: italic;
+  color: #555;
+  background-color: #f2f2f2;
+}
+
+
+/* --- Каталог сервісів --- */
+.service-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: 30% top;
+}
+
+.service-card h3 {
+  padding: 15px;
+  margin: 0;
+}
+
+.service-card ul {
+  list-style-type: '✓ ';
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* --- Форма зворотнього зв'язку --- */
+.feedback-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  width: 100%;
+}
+.feedback-form fieldset {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.feedback-form legend {
+  padding: 0 10px;
+  font-weight: 500;
+  color: #5a3a3a;
+}
+.form-group, .form-group-checkbox {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.form-group-checkbox label {
+  display: inline;
+  margin-left: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Важливо для правильної ширини */
+}
+textarea {
+  resize: vertical; /* Дозволяє змінювати висоту */
+  max-width: 100%; /* Обмеження по ширині */
+  height: 150px; /* Обмеження по висоті */
+}
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* --- Футер (Підвал сайту) --- */
+.site-footer {
+  background-color: #5a3a3a;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.site-footer p {
+  margin: 5px 0;
+}
