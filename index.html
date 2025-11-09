@@ -4,24 +4,154 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ательє "Золота Голка" - Головна</title>
+  <!-- Зовнішня таблиця стилів -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Внутрішня таблиця стилів для специфічних елементів головної сторінки -->
+  <style>
+    /* Селектор id для header з абсолютним позиціонуванням */
+    #main-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    /* Селектор класу для блоку з описом мети */
+    .mission-block {
+      margin: 0; /* Без зовнішніх відступів */
+      padding: 2rem; /* З внутрішніми відступами */
+      position: relative;
+      margin-top: 120px; /* Відступ для абсолютно позиціонованого header */
+    }
+
+    /* Селектор псевдоелементу ::before для емодзі */
+    .mission-block::before {
+      content: "✂️👗"; /* Емодзі ательє */
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    /* Селектор [атрибут] для всіх елементів з data-animate */
+    [data-animate] {
+      transition: all 0.3s ease;
+    }
+
+    /* Селектор [атрибут*="значення"] для елементів з type, що містить "text" */
+    input[type*="text"] {
+      border-left: 4px solid #d4af37;
+    }
+
+    /* Комбінатор нащадка (пробіл) - всі li всередині .mission-list */
+    .mission-list li {
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    /* Комбінатор сусіднього елемента (+) - p відразу після h2 */
+    h2 + p {
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    /* Колір трьома способами */
+    .color-name { color: darkblue; } /* name */
+    .color-hex { color: #d4af37; } /* HEX */
+    .color-rgb { color: rgb(212, 175, 55); } /* RGB */
+
+    /* 2D Трансформація для таблиці при hover */
+    #services-table table:hover {
+      transform: translateY(2vh);
+      transition: transform 0.5s ease;
+    }
+
+    /* Перехід для контактів через 2 сек з 3+ властивостями */
+    .contact-info:hover {
+      font-size: 120%;
+      color: #d4af37;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      transition: all 2s ease;
+      transition-delay: 2s;
+    }
+
+    /* overflow для блоку з найбільше текстовим контентом */
+    .text-content-block {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 1rem;
+    }
+
+    /* Стилізація scrollbar */
+    .text-content-block::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .text-content-block::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .text-content-block::-webkit-scrollbar-thumb {
+      background: #d4af37;
+      border-radius: 10px;
+    }
+
+    /* Анімація для логотипу */
+    @keyframes rotate-logo {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .logo img:hover {
+      animation: rotate-logo 2s ease-in-out;
+    }
+
+    /* Використання різних position */
+    .floating-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: hsl(45, 67%, 55%); /* HSL колір */
+      padding: 1rem;
+      border-radius: 50%;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .relative-container {
+      position: relative;
+    }
+
+    .sticky-note {
+      position: sticky;
+      top: 120px;
+      background: #fff3cd;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 4px solid #d4af37;
+    }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
+<!-- Абсолютно позиціонований header -->
+<header class="site-header" id="main-header">
   <div class="container">
     <div class="logo">
-      <img src="img/logo.png" alt="Логотип Золота Голка">
+      <img src="img/logo.png" alt="Логотип Золота Голка" data-animate>
       <h1>Ательє "Золота Голка"</h1>
     </div>
     <nav class="main-nav">
       <ul>
         <li><a href="catalog.html" class="nav-button">Каталог сервісів</a></li>
         <li><a href="#reviews" class="nav-button">Відгуки про сервіси</a></li>
-        <li><a href="feedback.html" class="nav-button">Зворотній зв’язок</a></li>
+        <li><a href="feedback.html" class="nav-button">Зворотній зв'язок</a></li>
       </ul>
     </nav>
     <div class="user-actions">
@@ -31,15 +161,21 @@
   </div>
 </header>
 
-<main class="container">
+<main class="container relative-container">
   <div class="main-content">
-    <article id="about">
+    <!-- Блок з описом мети без зовнішніх відступів -->
+    <article id="about" class="mission-block text-content-block">
       <h2>Про Наше Ательє</h2>
       <p>
         Ласкаво просимо на сайт сервісного ательє "Золота Голка"! Наша мета — втілювати ваші найсміливіші мрії про ідеальний одяг у реальність. Ми створюємо унікальні речі, що підкреслюють вашу індивідуальність, та надаємо якісні послуги з ремонту та реставрації.
       </p>
+
+      <div class="sticky-note">
+        💡 <strong>Важливо:</strong> Ми працюємо лише з натуральними тканинами преміум-класу!
+      </div>
+
       <h3>Наші ключові завдання:</h3>
-      <ol type="I">
+      <ol type="I" class="mission-list">
         <li>Забезпечити бездоганну якість пошиття та ремонту одягу.</li>
         <li>Надати персоналізований підхід до кожного клієнта.</li>
         <li>Створити зручний онлайн-сервіс для замовлення послуг.</li>
@@ -47,9 +183,18 @@
       <p>
         <b><u>Ми впевнені</u></b>, що <i>кожна деталь</i> має значення, тому <em>наші майстри</em> <span class="highlight">приділяють максимум уваги</span> вашим побажанням.
       </p>
+
+      <h3>Чому обирають нас?</h3>
+      <p>
+        Протягом 15 років ми працюємо з найкращими майстрами Києва. Наші фахівці постійно підвищують кваліфікацію, відвідуючи майстер-класи та міжнародні виставки модного одягу. Ми використовуємо сучасне обладнання та високоякісні матеріали.
+      </p>
+      <p>
+        Кожен проект для нас особливий. Ми уважно слухаємо ваші побажання та пропонуємо професійні рекомендації. Наша команда складається з дизайнерів, кравців та стилістів, які разом створюють ідеальний образ для вас.
+      </p>
     </article>
 
-    <section id="services-table">
+    <!-- Таблиця з трансформацією при hover -->
+    <section id="services-table" data-animate>
       <h2>Наші Послуги</h2>
       <table>
         <caption>Загальний перелік типів сервісів та терміни виконання</caption>
@@ -121,10 +266,15 @@
   </aside>
 </main>
 
+<!-- Floating badge з fixed position -->
+<div class="floating-badge">
+  🏆
+</div>
+
 <footer class="site-footer" id="contacts">
   <div class="container">
-    <p><strong>Наша адреса:</strong> м. Київ, вул. Хрещатик, 24</p>
-    <p><strong>Контактні телефони:</strong> (099) 123-45-67, (067) 123-45-68</p>
+    <p class="contact-info"><strong>Наша адреса:</strong> м. Київ, вул. Хрещатик, 24</p>
+    <p class="contact-info"><strong>Контактні телефони:</strong> (099) 123-45-67, (067) 123-45-68</p>
     <p>&copy; 2025 Ательє "Золота Голка". Усі права захищено.</p>
   </div>
 </footer>

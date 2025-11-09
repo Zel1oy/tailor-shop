@@ -20,12 +20,13 @@
   </div>
 </header>
 
-<main class="container">
+<main class="container feedback-container">
   <h2>Форма зворотнього зв'язку</h2>
   <p>Маєте запитання чи пропозиції? Заповніть форму нижче, і ми зв'яжемося з вами!</p>
 
-  <form action="#" method="POST" class="feedback-form">
-    <fieldset>
+  <!-- Flex контейнер для форми -->
+  <div class="feedback-form-flex">
+    <fieldset class="flex-item flex-item-1">
       <legend>Персональна інформація</legend>
       <div class="form-group">
         <label for="full-name">Прізвище та ім'я:</label>
@@ -41,36 +42,40 @@
       </div>
     </fieldset>
 
-    <div class="form-group">
-      <label for="feedback-purpose">Мета зворотнього зв’язку:</label>
-      <select id="feedback-purpose" name="feedback_purpose">
-        <option value="cooperation">Співпраця</option>
-        <option value="complaint">Скарга на неякісний пошив</option>
-        <option value="suggestion">Пропозиція</option>
-        <option value="error">Наявність помилки на сайті</option>
-      </select>
+    <div class="flex-item flex-item-2">
+      <div class="form-group">
+        <label for="feedback-purpose">Мета зворотнього зв'язку:</label>
+        <select id="feedback-purpose" name="feedback_purpose">
+          <option value="cooperation">Співпраця</option>
+          <option value="complaint">Скарга на неякісний пошив</option>
+          <option value="suggestion">Пропозиція</option>
+          <option value="error">Наявність помилки на сайті</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="details">Детально:</label>
+        <textarea
+          id="details"
+          name="details"
+          rows="8"
+          maxlength="1000"
+          placeholder="Опишіть ваше питання тут (до 1000 символів)..."></textarea>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="details">Детально:</label>
-      <textarea
-        id="details"
-        name="details"
-        rows="8"
-        maxlength="1000"
-        placeholder="Опишіть ваше питання тут (до 1000 символів)..."></textarea>
-    </div>
+    <div class="flex-item flex-item-3">
+      <div class="form-group-checkbox">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">Я даю згоду на обробку моєї персональної інформації.</label>
+      </div>
 
-    <div class="form-group-checkbox">
-      <input type="checkbox" id="consent" name="consent" required>
-      <label for="consent">Я даю згоду на обробку моєї персональної інформації.</label>
+      <div class="form-actions-flex">
+        <button type="submit" class="btn btn-primary">Надіслати</button>
+        <a href="index.html" class="btn">На Головну</a>
+      </div>
     </div>
-
-    <div class="form-actions">
-      <button type="submit" class="btn btn-primary">Надіслати</button>
-      <a href="index.html" class="btn">На Головну</a>
-    </div>
-  </form>
+  </div>
 </main>
 
 <footer class="site-footer">

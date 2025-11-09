@@ -8,10 +8,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Виправлення для каталогу */
+    body {
+      padding-top: 100px; /* Відступ для fixed header */
+    }
+
+    .catalog-main h2 {
+      display: block !important; /* Щоб текст не обрізався */
+      width: 100%;
+    }
+
+    .catalog-main {
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
+<!-- Фіксований header -->
+<header class="site-header catalog-header">
   <div class="container">
     <div class="logo">
       <img src="img/logo.png" alt="Логотип Золота Голка">
@@ -20,59 +37,69 @@
   </div>
 </header>
 
-<main class="container">
+<main class="container catalog-main">
   <h2>Каталог наших сервісів</h2>
-  <div class="service-catalog">
 
-    <div class="service-card">
-      <img src="img/suit.png" alt="Індивідуальний пошив ділового костюму">
+  <!-- Grid Layout для карток сервісів -->
+  <div class="service-catalog-grid">
+
+    <div class="service-card-bordered">
+      <img src="img/suit.png" alt="Індивідуальний пошив ділового костюму" class="service-image" tabindex="0">
       <h3>Індивідуальний пошив ділового костюму</h3>
       <ul>
         <li>Зняття індивідуальних мірок</li>
         <li>Вибір тканини преміум-класу</li>
+        <li class="fabric-type">Тип тканини: вовна, кашемір, твід</li>
         <li>Розробка унікального лекала</li>
         <li>Дві проміжні примірки</li>
         <li>Бездоганна посадка по фігурі</li>
       </ul>
+      <a href="#" class="service-link">Детальніше про послугу</a>
     </div>
 
-    <div class="service-card">
-      <img src="img/dress.png" alt="Пошиття вечірньої сукні">
+    <div class="service-card-bordered">
+      <img src="img/dress.png" alt="Пошиття вечірньої сукні" class="service-image" tabindex="0">
       <h3>Пошиття вечірньої сукні</h3>
       <ul>
         <li>Консультація стиліста</li>
         <li>Ексклюзивний дизайн</li>
-        <li>Використання шовку, атласу, мережива</li>
+        <li class="fabric-type">Тип тканини: шовк, атлас, мереживо</li>
         <li>Ручна вишивка та декорування</li>
         <li>Створення образу "під ключ"</li>
       </ul>
+      <a href="#" class="service-link">Детальніше про послугу</a>
     </div>
 
-    <div class="service-card">
-      <img src="img/repair.png" alt="Терміновий ремонт одягу">
+    <div class="service-card-bordered">
+      <img src="img/repair.png" alt="Терміновий ремонт одягу" class="service-image" tabindex="0">
       <h3>Терміновий ремонт одягу</h3>
       <ul>
         <li>Заміна блискавок та гудзиків</li>
         <li>Машинна та ручна штопка</li>
+        <li class="fabric-type">Тип матеріалу: будь-які тканини</li>
         <li>Усунення розривів та порізів</li>
         <li>Термін виконання - від 1 години</li>
         <li>Гарантія на виконану роботу</li>
       </ul>
+      <a href="#" class="service-link">Детальніше про послугу</a>
     </div>
 
-    <div class="service-card">
-      <img src="img/restavration.png" alt="Реставрація шкіряних виробів">
+    <div class="service-card-bordered">
+      <img src="img/restavration.png" alt="Реставрація шкіряних виробів" class="service-image" tabindex="0">
       <h3>Реставрація шкіряних виробів</h3>
       <ul>
         <li>Відновлення кольору та текстури</li>
         <li>Усунення подряпин та потертостей</li>
+        <li class="fabric-type">Тип матеріалу: натуральна та еко-шкіра</li>
         <li>Заміна фурнітури</li>
         <li>Рідка шкіра та професійні фарби</li>
         <li>Продовження життя улюблених речей</li>
       </ul>
+      <a href="#" class="service-link">Детальніше про послугу</a>
     </div>
 
   </div>
+
   <div class="text-center">
     <a href="index.html" class="btn btn-primary">Повернутись на Головну</a>
   </div>
